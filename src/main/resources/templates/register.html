@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+        }
+        .card {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .card-header {
+            background: rgba(22, 33, 62, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #0d6efd;
+            box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+            color: #fff;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #0d6efd, #0099ff);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+        }
+        .form-label {
+            color: #a8b2d1;
+        }
+        .form-check-label {
+            color: #a8b2d1;
+        }
+        .form-check-input:checked {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+        input:-webkit-autofill {
+            -webkit-text-fill-color: #fff;
+            -webkit-box-shadow: 0 0 0px 1000px #1a1a2e inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <!-- Your existing form content remains the same -->
+                        <form action="/register" method="post" th:object="${userDto}">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" th:field="*{name}">
+                                <span style="color: #ff4d4d;" th:errors="*{name}"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" th:field="*{email}">
+                                <span style="color: #ff4d4d;" th:errors="*{email}"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label">Mobile</label>
+                                <input type="tel" class="form-control" th:field="*{mobile}">
+                                <span style="color: #ff4d4d;" th:errors="*{mobile}"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" th:field="*{password}">
+                                <span style="color: #ff4d4d;" th:errors="*{password}"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" th:field="*{confirmPassword}">
+                                <span style="color: #ff4d4d;" th:errors="*{confirmPassword}"></span>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" th:field="*{terms}">
+                                <label class="form-check-label" for="terms">I agree to the Terms and Conditions</label>
+                                <span style="color: #ff4d4d;" th:errors="*{terms}"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

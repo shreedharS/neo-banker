@@ -1,0 +1,198 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #00ff88, #00a3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn {
+            padding: 12px 30px;
+            margin: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: linear-gradient(45deg, #00ff88, #00a3ff);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+            background: linear-gradient(45deg, #00a3ff, #00ff88);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Site</h1>
+        <div>
+            <a href="/register"><button class="btn">Register</button></a>
+            <a href="/login"><button class="btn">Login</button></a>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .home-card {
+            background: rgba(34, 40, 49, 0.95);
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .home-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+        .home-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        }
+        .home-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ff88, #00a3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        .home-subtitle {
+            color: #a8b2d1;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .btn {
+            padding: 12px 32px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: linear-gradient(45deg, #00ff88, #00a3ff);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.15);
+        }
+        .btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.25);
+            background: linear-gradient(45deg, #00a3ff, #00ff88);
+        }
+        a {
+            text-decoration: none;
+        }
+        @media (max-width: 576px) {
+            .home-card {
+                padding: 1.2rem 0.5rem;
+            }
+            .btn-group {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home-card">
+        <div class="home-logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo">
+        </div>
+        <div class="home-title">Welcome!</div>
+        <div class="home-subtitle">Join NeoBanker and manage your finances with ease.</div>
+        <div class="btn-group">
+            <a href="/register"><button class="btn">Register</button></a>
+            <a href="/login"><button class="btn">Login</button></a>
